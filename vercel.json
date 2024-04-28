@@ -1,12 +1,11 @@
 {
     "redirects": [ 
-      {"source": "/URL", "destination": "https://www.proxies.dynv6.net", "permanent": true }
+      {"source": "/URL", "destination": "/", "permanent": true }
     ],
     "rewrites": [
       { "source": "/", "destination": "/index.html"},
-      { "source": "/:match/:url*", "destination": "https://:match/:url*" },
-      { "source": "/:match/:url*/", "destination": "https://:match/:url*/" },
-      { "source": "/httpproxy/:match/:url*", "destination": "http://:match/:url*" },
-      { "source": "/httpproxy/:match/:url*/", "destination": "http://:match/:url*/" }
+      { "source": "/:path((http:\/\/).*)", "destination": "http://:path*" },
+      { "source": "/:path((https:\/\/).*)", "destination": "https://:path*" },
+      { "source": "/:path((?!http:\/\/|https:\/\/).*)", "destination": ":path*" }
     ]
 }
