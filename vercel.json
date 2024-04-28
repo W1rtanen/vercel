@@ -5,6 +5,6 @@
     "rewrites": [
       { "source": "/", "destination": "/index.html"},
       { "source": "/:path((?!http|https).*)", "destination": "https://:path*" },
-      { "source": "/:match*", "destination": "https://:match*" }
+      { "source": "/https://:path*", "destination": "https://:path*" }
     ]
 }
